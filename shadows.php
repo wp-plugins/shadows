@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Shadows
-Plugin URI: http://deepport.net/shadows
+Plugin URI: http://deepport.net/computing/wordpress-shadows-plugin/
 Description: Adds shadows to images, divs and blockquotes
 Version: 0.2
 Author: Andrew Radke
