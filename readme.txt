@@ -39,7 +39,7 @@ I decided against applying the shadows to everything it could recognise as this 
 1. If something covers the div or blockquote it can push the shadow down to below the covering object and thus separate the shadow from the object it should be attached to. Try to avoid it through the use of clear or margins.
 
 ### Recommendations
-From Sebastiaan: "the only thing I'd suggest is adding a border to the divs, otherwise the shadow looks rather detached." I have elected not to do this automatically to allow greater control of the appearance of your pages.
+From Sebastiaan: "the only thing I'd suggest is adding a border to the divs, otherwise the shadow looks rather detached." I have elected not to do this automatically to allow you greater control over the appearance of your pages.
 
 == Installation ==
 
@@ -55,7 +55,7 @@ So far images, divs and blockquotes.
 
 = Is Internet Explorer supported? =
 
-Version 7 and up is with the exception that the opacity level of the shadows cannot be changed.
+Version 7 and up is, with the exception that the opacity level of the shadows cannot be changed.
 
 = How do I add a shadow to an object? =
 
