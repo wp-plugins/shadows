@@ -4,7 +4,7 @@ Donate link: http://deepport.net
 Tags: shadow
 Requires at least: 2.5
 Tested up to: 2.8
-Stable tag: 0.2
+Stable tag: 0.2.1
 
 This is a plugin to add shadows to a range of objects. Currently supported are images, divs and blockquotes.
 
@@ -72,6 +72,9 @@ The initial release was aimed at getting the "curl" shadows looking good. In sub
 Other than that the appearance will be the same across all supported browsers.
 
 == Changelog ==
+
+= 0.2.1 =
+* Optimised PNG shadow images
 
 = 0.2 =
 * Initial public release
