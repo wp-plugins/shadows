@@ -16,16 +16,20 @@ I got the inspiration from the [cocoia blog](http://blog.cocoia.com/) and Sebast
 
 ### Browser Compatibility
 I have tested this plugin in the following browsers:
+
 1. Internet Explorer 7 &amp; 8
 1. Firefox 3 &amp; 3.5
 1. Safari 4
+
 **Internet Explorer 6 is not supported** due to the use of transparent png images. As such the plugin stops the shadows from displaying in IE6.
 The opacity setting is disabled for all versions of Internet Explorer due to bugs in how it renders (even IE8).
 
 ### Usage
 Add one of the following classes to the object:
+
 * shadow_curl
 * shadow_flat
+
 For images this is as simply as adding the text to the end of the "CSS Class" under the "Advanced Settings" for the image.
 For divs and blockquotes you will need to use the HTML view in the editor and add `class="shadow_curl"` to the object.
 
