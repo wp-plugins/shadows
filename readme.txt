@@ -27,8 +27,8 @@ The opacity setting is disabled for all versions of Internet Explorer due to bug
 ### Usage
 Add one of the following classes to the object:
 
-* shadow_curl
-* shadow_flat
+* `shadow_curl`
+* `shadow_flat`
 
 For images this is as simply as adding the text to the end of the "CSS Class" under the "Advanced Settings" for the image.
 For divs and blockquotes you will need to use the HTML view in the editor and add `class="shadow_curl"` to the object.
