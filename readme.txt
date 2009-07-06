@@ -62,6 +62,10 @@ Version 7 and up is, with the exception that the opacity level of the shadows ca
 For images this is as simply as adding the text to the end of the “CSS Class” under the “Advanced Settings” for the image.
 For divs and blockquotes you will need to use the HTML view in the editor and add class="shadow_curl" to the object.
 
+= What about regular drop shadows? =
+
+The initial release was aimed at getting the "curl" shadows looking good. In subsequent releases I may add support for "normal" drop shadows if it is requested.
+
 == Screenshots ==
 
 1. Screenshot taken with Firefox 3.5. The opacity of the flat shadows has been set to 80% which will not be applied in IE.
