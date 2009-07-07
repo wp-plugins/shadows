@@ -54,7 +54,7 @@ function shadow_curls($content) {
 		}
 	}
 
-	preg_match_all ( '/<img [^>]*[" ]shadow_(curl|flat)[" ][^>]*\/?>/ims',$content, $images );
+	preg_match_all ( '/<img [^>]*[" ]shadow_(curl|flat|osx)[" ][^>]*\/?>/ims',$content, $images );
 	foreach ( $images[0] as $image) {
 		$image_replace = $image;
 
@@ -64,7 +64,7 @@ function shadow_curls($content) {
 		$align = preg_replace ('/.*class="([^"]* |)(align[^ "]*).*/i', '\\2', $image);
 		if ($align == $image) $align = 'alignnone';
 
-		$type = preg_replace ('/.*shadow_(curl|flat).*/i', '\\1', $image);
+		$type = preg_replace ('/.*shadow_(curl|flat|osx).*/i', '\\1', $image);
 
 		if ($type == 'curl') {
 			$height = $curl_shadow_height;
@@ -87,11 +87,39 @@ function shadow_curls($content) {
 			}
 		}
 		
-		$pre_image = '<div style="display:table;line-height:0;text-align:center;width:'.$width.'px;'.$style.'" class="'.$align.'">';
-		$post_image = '<br/><img src="'.$plugin_url.'/shadow_'.$type.'.png" class="shadow_img" style="margin-top:0 !important;height:'.$height.';width:100%;'.$opacity.'"></div>';
+		if (($type == 'curl') || ($type == 'flat')) {
+			$pre_image = '<div style="display:table;line-height:0;text-align:center;width:'.$width.'px;'.$style.'" class="'.$align.'">';
+			$post_image = '<br/><img src="'.$plugin_url.'/shadow_'.$type.'.png" class="shadow_img" style="margin-top:0 !important;height:'.$height.';width:100%;'.$opacity.'"></div>';
+		} elseif ($type == 'osx') {
+			$pre_image = '<div style="'.$width.'; '.$style.'" class="'.$align.'">
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left top; width: 30px; height: 7px; float: left;"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right top; width: 30px; height: 7px; float: right;"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_top.png) repeat-x center top; margin: 0 30px; height: 7px;"></div>
+<table style="margin:0;padding:0;width:100%;empty-cells:show;"><tr>
+<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left -8px; width: 15px; height: 25px;"></td>
+<td rowspan=2 style="margin:0;padding:0;border-width:0; background-color: transparent; line-height:1px;">
+';
+			$post_image = '
+</td><td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right -8px; width: 15px; height: 25px;"></td>
+</tr>
+<tr>
+<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_left.png) repeat-y left center; width: 15px;margin:0;padding:0;border-width:0;"></td>
+<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_right.png) repeat-y right center; width: 15px;margin:0;padding:0;border-width:0;"></td>
+</tr>
+</table>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left bottom; width: 30px; height: 23px; float: left;"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right bottom; width: 30px; height: 23px; float: right;"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_bottom.png) repeat-x center bottom; margin: 0 30px; height: 23px;"></div>
+</div>
+';
+		}
 
 		### Add the styles required to the image
-		$image_style = 'padding:0 !important; margin-bottom:0 !important; margin-left:0 !important; margin-right:0 !important; max-width:100% !important;';
+		if (($type == 'curl') || ($type == 'flat')) {
+			$image_style = 'padding:0 !important; margin-bottom:0 !important; margin-left:0 !important; margin-right:0 !important; max-width:100% !important;';
+		} elseif ($type == 'osx') {
+			$image_style = 'padding:0 !important; margin-bottom:0 !important; margin-left:0 !important; margin-right:0 !important; max-width:100% !important; min-height: 25px !important;';
+		}
 		if (strpos($image, "style=") == true) {
 			$image_replace = preg_replace ('/style="[^"]*/', "\\0; $image_style", $image_replace);
 		} else {
@@ -105,7 +133,7 @@ function shadow_curls($content) {
 		$content = str_replace ($image, $replace , $content);
 	}
 
-	preg_match_all ( '/<(div|blockquote) [^>]*[" ]shadow_(curl|flat)[" ][^>]*>.*<\/\\1>/imsU',$content, $objects );
+	preg_match_all ( '/<(div|blockquote) [^>]*[" ]shadow_(curl|flat|osx)[" ][^>]*>.*<\/\\1>/imsU',$content, $objects );
 	foreach ( $objects[0] as $object) {
 		$object_type = preg_replace ('/^<(div|blockquote) .*/ims', '\\1', $object);
 		$object_replace = $object;
@@ -116,7 +144,7 @@ function shadow_curls($content) {
 		$align = preg_replace ('/^<'.$object_type.' [^>]*class="([^"]* |)(align[^ "]*).*/ims', '\\2', $object);
 		if ($align == $object) $align = 'alignnone';
 
-		$type = preg_replace ('/^<'.$object_type.' [^>]*class="([^"]* |)shadow_(curl|flat).*/ims', '\\2', $object);
+		$type = preg_replace ('/^<'.$object_type.' [^>]*class="([^"]* |)shadow_(curl|flat|osx).*/ims', '\\2', $object);
 
 		if ($type == 'curl') {
 			$height = $curl_shadow_height;
@@ -139,11 +167,40 @@ function shadow_curls($content) {
 			}
 		}
 
-		$pre_div = '<div style="'.$width.'; '.$style.'" class="'.$align.'">';
-		$post_div = '<img src="'.$plugin_url.'/shadow_'.$type.'.png" class="aligncenter shadow_img" style="margin-top:0 !important;height:'.$height.';width:100%;'.$opacity.'"></div>';
+		if (($type == 'curl') || ($type == 'flat')) {
+			$pre_div = '<div style="'.$width.'; '.$style.'" class="'.$align.'">';
+			$post_div = '<img src="'.$plugin_url.'/shadow_'.$type.'.png" class="aligncenter shadow_img" style="margin-top:0 !important;height:'.$height.';width:100%;'.$opacity.'"></div>';
+		} elseif ($type == 'osx') {
+			$pre_div = '<div style="'.$width.'; '.$style.'" class="'.$align.'">
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left top; width: 30px; height: 7px; float: left;"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right top; width: 30px; height: 7px; float: right;"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_top.png) repeat-x center top; margin: 0 30px; height: 7px;"></div>
+<table style="margin:0;padding:0;width:100%;empty-cells:show;"><tr>
+<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left -8px; width: 15px; height: 25px;"></td>
+<td rowspan=2 style="margin:0;padding:0;border-width:0; background-color: transparent;">
+';
+			$post_div = '
+</td><td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right -8px; width: 15px; height: 25px;"></td>
+</tr>
+<tr>
+<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_left.png) repeat-y left center; width: 15px;margin:0;padding:0;border-width:0;"></td>
+<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_right.png) repeat-y right center; width: 15px;margin:0;padding:0;border-width:0;"></td>
+</tr>
+</table>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left bottom; width: 30px; height: 23px; float: left;"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right bottom; width: 30px; height: 23px; float: right;"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_bottom.png) repeat-x center bottom; margin: 0 30px; height: 23px;"></div>
+</div>
+';
+		}
 
 		### Add the styles required to the original object
-		$object_style = 'margin:0 !important; max-width:100% !important;';
+		if (($type == 'curl') || ($type == 'flat')) {
+			$object_style = 'margin:0 !important; max-width:100% !important;';
+		} elseif ($type == 'osx') {
+			$object_style = 'margin:0 !important; max-width:100% !important; min-height: 25px !important; border: 1px solid #ccc;';
+		}
+
 		# We need to check for a style on the object and not just something inside it
 		preg_match ( '/^<'.$object_type.' [^>]*style="/i',$object, $check );
 		if ($check) {
