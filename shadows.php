@@ -3,7 +3,7 @@
 Plugin Name: Shadows
 Plugin URI: http://deepport.net/computing/wordpress-shadows-plugin/
 Description: Adds a range of shadow types to images, divs and blockquotes
-Version: 0.3
+Version: 0.3.1
 Author: Andrew Radke
 Author URI: http://deepport.net/
 */
@@ -98,7 +98,7 @@ function shadow_curls($content) {
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left top; width: 30px; height: 7px; float: left;" class="shadow_img"></div>
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right top; width: 30px; height: 7px; float: right;" class="shadow_img"></div>
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_top.png) repeat-x center top; margin: 0 30px; height: 7px;" class="shadow_img"></div>
-<table style="margin:0;padding:0;width:100%;empty-cells:show;"><tr>
+<table style="margin:0;padding:0;width:100%;empty-cells:show;border-collapse:collapse;"><tr>
 <td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left -7px; width: 15px; height: 25px;" class="shadow_img"></td>
 <td rowspan=2 style="margin:0;padding:0;border-width:0; background-color: transparent; line-height:1px;">
 ';
@@ -122,7 +122,7 @@ function shadow_curls($content) {
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left top; width: 30px; height: 2px; float: left;" class="shadow_img"></div>
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right top; width: 30px; height: 2px; float: right;" class="shadow_img"></div>
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_top.png) repeat-x center top; margin: 0 30px; height: 2px;" class="shadow_img"></div>
-<table style="margin:0;padding:0;width:100%;empty-cells:show;"><tr>
+<table style="margin:0;padding:0;width:100%;empty-cells:show;border-collapse:collapse;"><tr>
 <td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left -2px; width: 6px; height: 25px;" class="shadow_img"></td>
 <td rowspan=2 style="margin:0;padding:0;border-width:0; background-color: transparent; line-height:1px;">
 ';
@@ -202,7 +202,7 @@ function shadow_curls($content) {
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left top; width: 30px; height: 7px; float: left;" class="shadow_img"></div>
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right top; width: 30px; height: 7px; float: right;" class="shadow_img"></div>
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_top.png) repeat-x center top; margin: 0 30px; height: 7px;" class="shadow_img"></div>
-<table style="margin:0;padding:0;width:100%;empty-cells:show;"><tr>
+<table style="margin:0;padding:0;width:100%;empty-cells:show;border-collapse:collapse;"><tr>
 <td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left -7px; width: 15px; height: 25px;" class="shadow_img"></td>
 <td rowspan=2 style="margin:0;padding:0;border-width:0; background-color: transparent;">
 ';
@@ -225,7 +225,7 @@ function shadow_curls($content) {
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left top; width: 30px; height: 2px; float: left;" class="shadow_img"></div>
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right top; width: 30px; height: 2px; float: right;" class="shadow_img"></div>
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_top.png) repeat-x center top; margin: 0 30px; height: 2px;" class="shadow_img"></div>
-<table style="margin:0;padding:0;width:100%;empty-cells:show;"><tr>
+<table style="margin:0;padding:0;width:100%;empty-cells:show;border-collapse:collapse;"><tr>
 <td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left -2px; width: 6px; height: 25px;" class="shadow_img"></td>
 <td rowspan=2 style="margin:0;padding:0;border-width:0; background-color: transparent;">
 ';
