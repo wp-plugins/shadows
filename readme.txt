@@ -20,6 +20,7 @@ I have tested this plugin in the following browsers:
 1. Internet Explorer 7 &amp; 8
 1. Firefox 3 &amp; 3.5
 1. Safari 4
+1. Opera 9
 
 **Internet Explorer 6 is not supported** due to the use of transparent png images in ways that regular work arounds don't address. As such the plugin stops the shadows from displaying in IE6.
 The opacity setting is disabled for all versions of Internet Explorer due to bugs in how it renders (even IE8).
