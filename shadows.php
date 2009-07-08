@@ -38,7 +38,8 @@ function shadow_curls($content) {
 	if ($curl_shadow_opacity) {
 		if ($curl_shadow_opacity < 10) $curl_shadow_opacity = "0".$curl_shadow_opacity;
 		if ($curl_shadow_opacity < 100) {
-			$curl_shadow_opacity = "filter: alpha(opacity=$curl_shadow_opacity);-moz-opacity:.$curl_shadow_opacity;opacity:.$curl_shadow_opacity;";
+#			$curl_shadow_opacity = "filter: alpha(opacity=$curl_shadow_opacity);-moz-opacity:.$curl_shadow_opacity;opacity:.$curl_shadow_opacity;";
+			$curl_shadow_opacity = "-moz-opacity:.$curl_shadow_opacity;opacity:.$curl_shadow_opacity;";
 		} else {
 			$curl_shadow_opacity = '';
 		}
@@ -48,7 +49,8 @@ function shadow_curls($content) {
 	if ($flat_shadow_opacity) {
 		if ($flat_shadow_opacity < 10) $flat_shadow_opacity = "0".$flat_shadow_opacity;
 		if ($flat_shadow_opacity < 100) {
-			$flat_shadow_opacity = "filter: alpha(opacity=$flat_shadow_opacity);-moz-opacity:.$flat_shadow_opacity;opacity:.$flat_shadow_opacity;";
+#			$flat_shadow_opacity = "filter: alpha(opacity=$flat_shadow_opacity);-moz-opacity:.$flat_shadow_opacity;opacity:.$flat_shadow_opacity;";
+			$flat_shadow_opacity = "-moz-opacity:.$flat_shadow_opacity;opacity:.$flat_shadow_opacity;";
 		} else {
 			$flat_shadow_opacity = '';
 		}
@@ -91,7 +93,8 @@ function shadow_curls($content) {
 			$pre_image = '<div style="display:table;line-height:0;text-align:center;width:'.$width.'px;'.$style.'" class="'.$align.'">';
 			$post_image = '<br/><img src="'.$plugin_url.'/shadow_'.$type.'.png" class="shadow_img" style="margin-top:0 !important;height:'.$height.';width:100%;'.$opacity.'"></div>';
 		} elseif ($type == 'osx') {
-			$pre_image = '<div style="'.$width.'; '.$style.'" class="'.$align.'">
+			$width += 30;
+			$pre_image = '<div style="width:'.$width.'px; '.$style.'" class="'.$align.'">
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left top; width: 30px; height: 7px; float: left;"></div>
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right top; width: 30px; height: 7px; float: right;"></div>
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_top.png) repeat-x center top; margin: 0 30px; height: 7px;"></div>
@@ -113,7 +116,8 @@ function shadow_curls($content) {
 </div>
 ';
 		} elseif ($type == 'osx_small') {
-			$pre_image = '<div style="'.$width.'; '.$style.'" class="'.$align.'">
+			$width += 12;
+			$pre_image = '<div style="width:'.$width.'px; '.$style.'" class="'.$align.'">
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left top; width: 30px; height: 2px; float: left;"></div>
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right top; width: 30px; height: 2px; float: right;"></div>
 <div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_top.png) repeat-x center top; margin: 0 30px; height: 2px;"></div>
