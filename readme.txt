@@ -4,13 +4,13 @@ Donate link: http://deepport.net
 Tags: shadow
 Requires at least: 2.5
 Tested up to: 2.8
-Stable Tag: 0.2.1
+Stable Tag: 0.3
 
-This is a plugin to add shadows to a range of objects. Currently supported are images, divs and blockquotes.
+This is a plugin to add a range of shadow types to a range of objects. Currently supported are images, divs and blockquotes.
 
 == Description ==
 
-This is a plugin to add shadows to a range of objects. Currently supported are images, divs and blockquotes.
+This is a plugin to add a range of shadow types to a range of objects. Currently supported are images, divs and blockquotes.
 
 I got the inspiration from the [cocoia blog](http://blog.cocoia.com/) and Sebastiaan de With was kind enough to let me use the shadow image that he applies to his images.
 
@@ -21,7 +21,7 @@ I have tested this plugin in the following browsers:
 1. Firefox 3 &amp; 3.5
 1. Safari 4
 
-**Internet Explorer 6 is not supported** due to the use of transparent png images. As such the plugin stops the shadows from displaying in IE6.
+**Internet Explorer 6 is not supported** due to the use of transparent png images in ways that regular work arounds don't address. As such the plugin stops the shadows from displaying in IE6.
 The opacity setting is disabled for all versions of Internet Explorer due to bugs in how it renders (even IE8).
 
 ### Usage
@@ -29,6 +29,8 @@ Add one of the following classes to the object:
 
 * `shadow_curl`
 * `shadow_flat`
+* `shadow_osx`
+* `shadow_osx_small`
 
 For images this is as simply as adding the text to the end of the "CSS Class" under the "Advanced Settings" for the image.
 For divs and blockquotes you will need to use the HTML view in the editor and add `class="shadow_curl"` to the object.
@@ -59,8 +61,8 @@ Version 7 and up is, with the exception that the opacity level of the shadows ca
 
 = How do I add a shadow to an object? =
 
-For images this is as simply as adding the text to the end of the “CSS Class” under the “Advanced Settings” for the image.
-For divs and blockquotes you will need to use the HTML view in the editor and add class="shadow_curl" to the object.
+For images this is as simply as adding `shadow_xxxx` to the end of the "CSS Class" under the "Advanced Settings" for the image.
+For divs and blockquotes you will need to use the HTML view in the editor and add `class="shadow_xxxx"` to the object.
 
 = What about regular drop shadows? =
 
@@ -70,8 +72,12 @@ The initial release was aimed at getting the "curl" shadows looking good. In sub
 
 1. Screenshot taken with Firefox 3.5. The opacity of the flat shadows has been set to 80% which will not be applied in IE.
 Other than that the appearance will be the same across all supported browsers.
+1. Screenshot taken with Firefox 3.5. This shows the two OS X window style shadows `shadow_osx` and `shadow_osx_small`
 
 == Changelog ==
+
+= 0.3 =
+* Added OS X window style shadows (regular and small)
 
 = 0.2.1 =
 * Optimised PNG shadow images
