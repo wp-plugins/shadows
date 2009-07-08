@@ -39,6 +39,7 @@ I decided against applying the shadows to everything it could recognise as this 
 
 ### Known Issues
 1. If something covers the div or blockquote it can push the shadow down to below the covering object and thus separate the shadow from the object it should be attached to. Try to avoid it through the use of clear or margins.
+1. The plugin does not support divs nested inside the shadowed div or blockquotes nested inside the shadowed blockquote.
 
 ### Recommendations
 From Sebastiaan: "the only thing I'd suggest is adding a border to the divs, otherwise the shadow looks rather detached." I have elected not to do this automatically to allow you greater control over the appearance of your pages.
@@ -47,7 +48,7 @@ From Sebastiaan: "the only thing I'd suggest is adding a border to the divs, oth
 
 1. Upload the whole plugin folder to your /wp-content/plugins/ folder.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. Place `class="shadow_curl"` or `class="shadow_flat"` on the objects you want to have shadows.
+1. Place `class="shadow_curl"`, `class="shadow_flat"`, etc on the objects you want to have shadows.
 
 == Frequently Asked Questions ==
 
