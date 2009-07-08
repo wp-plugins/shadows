@@ -95,47 +95,49 @@ function shadow_curls($content) {
 		} elseif ($type == 'osx') {
 			$width += 30;
 			$pre_image = '<div style="width:'.$width.'px; '.$style.'" class="'.$align.'">
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left top; width: 30px; height: 7px; float: left;"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right top; width: 30px; height: 7px; float: right;"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_top.png) repeat-x center top; margin: 0 30px; height: 7px;"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left top; width: 30px; height: 7px; float: left;" class="shadow_img"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right top; width: 30px; height: 7px; float: right;" class="shadow_img"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_top.png) repeat-x center top; margin: 0 30px; height: 7px;" class="shadow_img"></div>
 <table style="margin:0;padding:0;width:100%;empty-cells:show;"><tr>
-<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left -7px; width: 15px; height: 25px;"></td>
+<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left -7px; width: 15px; height: 25px;" class="shadow_img"></td>
 <td rowspan=2 style="margin:0;padding:0;border-width:0; background-color: transparent; line-height:1px;">
 ';
 			$post_image = '
-</td><td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right -7px; width: 15px; height: 25px;"></td>
+</td>
+<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right -7px; width: 15px; height: 25px;" class="shadow_img"></td>
 </tr>
 <tr>
-<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_left.png) repeat-y left center; width: 15px;margin:0;padding:0;border-width:0;"></td>
-<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_right.png) repeat-y right center; width: 15px;margin:0;padding:0;border-width:0;"></td>
+<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_left.png) repeat-y left center; width: 15px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
+<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_right.png) repeat-y right center; width: 15px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
 </tr>
 </table>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left bottom; width: 30px; height: 23px; float: left;"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right bottom; width: 30px; height: 23px; float: right;"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_bottom.png) repeat-x center bottom; margin: 0 30px; height: 23px;"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left bottom; width: 30px; height: 23px; float: left;" class="shadow_img"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right bottom; width: 30px; height: 23px; float: right;" class="shadow_img"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_bottom.png) repeat-x center bottom; margin: 0 30px; height: 23px;" class="shadow_img"></div>
 </div>
 ';
 		} elseif ($type == 'osx_small') {
 			$width += 12;
 			$pre_image = '<div style="width:'.$width.'px; '.$style.'" class="'.$align.'">
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left top; width: 30px; height: 2px; float: left;"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right top; width: 30px; height: 2px; float: right;"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_top.png) repeat-x center top; margin: 0 30px; height: 2px;"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left top; width: 30px; height: 2px; float: left;" class="shadow_img"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right top; width: 30px; height: 2px; float: right;" class="shadow_img"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_top.png) repeat-x center top; margin: 0 30px; height: 2px;" class="shadow_img"></div>
 <table style="margin:0;padding:0;width:100%;empty-cells:show;"><tr>
-<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left -2px; width: 6px; height: 25px;"></td>
+<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left -2px; width: 6px; height: 25px;" class="shadow_img"></td>
 <td rowspan=2 style="margin:0;padding:0;border-width:0; background-color: transparent; line-height:1px;">
 ';
 			$post_image = '
-</td><td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right -2px; width: 6px; height: 25px;"></td>
+</td>
+<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right -2px; width: 6px; height: 25px;" class="shadow_img"></td>
 </tr>
 <tr>
-<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_left.png) repeat-y left center; width: 6px;margin:0;padding:0;border-width:0;"></td>
-<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_right.png) repeat-y right center; width: 6px;margin:0;padding:0;border-width:0;"></td>
+<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_left.png) repeat-y left center; width: 6px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
+<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_right.png) repeat-y right center; width: 6px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
 </tr>
 </table>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left bottom; width: 30px; height: 10px; float: left;"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right bottom; width: 30px; height: 10px; float: right;"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_bottom.png) repeat-x center bottom; margin: 0 30px; height: 10px;"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left bottom; width: 30px; height: 10px; float: left;" class="shadow_img"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right bottom; width: 30px; height: 10px; float: right;" class="shadow_img"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_bottom.png) repeat-x center bottom; margin: 0 30px; height: 10px;" class="shadow_img"></div>
 </div>
 ';		}
 
@@ -197,46 +199,48 @@ function shadow_curls($content) {
 			$post_div = '<img src="'.$plugin_url.'/shadow_'.$type.'.png" class="aligncenter shadow_img" style="margin-top:0 !important;height:'.$height.';width:100%;'.$opacity.'"></div>';
 		} elseif ($type == 'osx') {
 			$pre_div = '<div style="'.$width.'; '.$style.'" class="'.$align.'">
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left top; width: 30px; height: 7px; float: left;"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right top; width: 30px; height: 7px; float: right;"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_top.png) repeat-x center top; margin: 0 30px; height: 7px;"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left top; width: 30px; height: 7px; float: left;" class="shadow_img"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right top; width: 30px; height: 7px; float: right;" class="shadow_img"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_top.png) repeat-x center top; margin: 0 30px; height: 7px;" class="shadow_img"></div>
 <table style="margin:0;padding:0;width:100%;empty-cells:show;"><tr>
-<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left -7px; width: 15px; height: 25px;"></td>
+<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left -7px; width: 15px; height: 25px;" class="shadow_img"></td>
 <td rowspan=2 style="margin:0;padding:0;border-width:0; background-color: transparent;">
 ';
 			$post_div = '
-</td><td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right -7px; width: 15px; height: 25px;"></td>
+</td>
+<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right -7px; width: 15px; height: 25px;" class="shadow_img"></td>
 </tr>
 <tr>
-<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_left.png) repeat-y left center; width: 15px;margin:0;padding:0;border-width:0;"></td>
-<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_right.png) repeat-y right center; width: 15px;margin:0;padding:0;border-width:0;"></td>
+<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_left.png) repeat-y left center; width: 15px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
+<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_right.png) repeat-y right center; width: 15px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
 </tr>
 </table>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left bottom; width: 30px; height: 23px; float: left;"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right bottom; width: 30px; height: 23px; float: right;"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_bottom.png) repeat-x center bottom; margin: 0 30px; height: 23px;"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left bottom; width: 30px; height: 23px; float: left;" class="shadow_img"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right bottom; width: 30px; height: 23px; float: right;" class="shadow_img"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_bottom.png) repeat-x center bottom; margin: 0 30px; height: 23px;" class="shadow_img"></div>
 </div>
 ';
 		} elseif ($type == 'osx_small') {
 			$pre_div = '<div style="'.$width.'; '.$style.'" class="'.$align.'">
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left top; width: 30px; height: 2px; float: left;"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right top; width: 30px; height: 2px; float: right;"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_top.png) repeat-x center top; margin: 0 30px; height: 2px;"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left top; width: 30px; height: 2px; float: left;" class="shadow_img"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right top; width: 30px; height: 2px; float: right;" class="shadow_img"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_top.png) repeat-x center top; margin: 0 30px; height: 2px;" class="shadow_img"></div>
 <table style="margin:0;padding:0;width:100%;empty-cells:show;"><tr>
-<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left -2px; width: 6px; height: 25px;"></td>
+<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left -2px; width: 6px; height: 25px;" class="shadow_img"></td>
 <td rowspan=2 style="margin:0;padding:0;border-width:0; background-color: transparent;">
 ';
 			$post_div = '
-</td><td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right -2px; width: 6px; height: 25px;"></td>
+</td>
+<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right -2px; width: 6px; height: 25px;" class="shadow_img"></td>
 </tr>
 <tr>
-<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_left.png) repeat-y left center; width: 6px;margin:0;padding:0;border-width:0;"></td>
-<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_right.png) repeat-y right center; width: 6px;margin:0;padding:0;border-width:0;"></td>
+<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_left.png) repeat-y left center; width: 6px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
+<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_right.png) repeat-y right center; width: 6px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
 </tr>
 </table>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left bottom; width: 30px; height: 10px; float: left;"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right bottom; width: 30px; height: 10px; float: right;"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_bottom.png) repeat-x center bottom; margin: 0 30px; height: 10px;"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left bottom; width: 30px; height: 10px; float: left;" class="shadow_img"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right bottom; width: 30px; height: 10px; float: right;" class="shadow_img"></div>
+<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_bottom.png) repeat-x center bottom; margin: 0 30px; height: 10px;" class="shadow_img"></div>
 </div>
 ';
 		}
