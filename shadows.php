@@ -3,7 +3,7 @@
 Plugin Name: Shadows
 Plugin URI: http://deepport.net/computing/wordpress-shadows-plugin/
 Description: Adds a range of shadow types to images, divs and blockquotes
-Version: 0.3.1
+Version: 0.3.2
 Author: Andrew Radke
 Author URI: http://deepport.net/
 */
@@ -91,61 +91,61 @@ function shadow_curls($content) {
 		
 		if (($type == 'curl') || ($type == 'flat')) {
 			$pre_image = '<div style="display:table;line-height:0;text-align:center;width:'.$width.'px;'.$style.'" class="'.$align.'">';
-			$post_image = '<br/><img src="'.$plugin_url.'/shadow_'.$type.'.png" class="shadow_img" style="margin-top:0 !important;height:'.$height.';width:100%;'.$opacity.'"></div>';
+			$post_image = '<br/><img src="'.$plugin_url.'/shadow_'.$type.'.png" class="shadow_img" style="margin:0 !important;height:'.$height.';width:100%;'.$opacity.'"></div>';
 		} elseif ($type == 'osx') {
 			$width += 30;
 			$pre_image = '<div style="width:'.$width.'px; '.$style.'" class="'.$align.'">
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left top; width: 30px; height: 7px; float: left;" class="shadow_img"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right top; width: 30px; height: 7px; float: right;" class="shadow_img"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_top.png) repeat-x center top; margin: 0 30px; height: 7px;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx.png) no-repeat left top; width: 30px; height: 7px; float: left;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx.png) no-repeat right top; width: 30px; height: 7px; float: right;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx_top.png) repeat-x center top; margin: 0 30px; height: 7px;" class="shadow_img"></div>
 <table style="margin:0;padding:0;width:100%;empty-cells:show;border-collapse:collapse;"><tr>
-<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left -7px; width: 15px; height: 25px;" class="shadow_img"></td>
+<td style="margin:0;padding:0;border-width:0;background: transparent url('.$plugin_url.'/shadow_osx.png) no-repeat left -7px; width: 15px; height: 25px;" class="shadow_img"></td>
 <td rowspan=2 style="margin:0;padding:0;border-width:0; background-color: transparent; line-height:1px;">
 ';
 			$post_image = '
 </td>
-<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right -7px; width: 15px; height: 25px;" class="shadow_img"></td>
+<td style="margin:0;padding:0;border-width:0;background: transparent url('.$plugin_url.'/shadow_osx.png) no-repeat right -7px; width: 15px; height: 25px;" class="shadow_img"></td>
 </tr>
 <tr>
-<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_left.png) repeat-y left center; width: 15px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
-<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_right.png) repeat-y right center; width: 15px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
+<td style="background: transparent url('.$plugin_url.'/shadow_osx_left.png) repeat-y left center; width: 15px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
+<td style="background: transparent url('.$plugin_url.'/shadow_osx_right.png) repeat-y right center; width: 15px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
 </tr>
 </table>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left bottom; width: 30px; height: 23px; float: left;" class="shadow_img"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right bottom; width: 30px; height: 23px; float: right;" class="shadow_img"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_bottom.png) repeat-x center bottom; margin: 0 30px; height: 23px;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx.png) no-repeat left bottom; width: 30px; height: 23px; float: left;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx.png) no-repeat right bottom; width: 30px; height: 23px; float: right;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx_bottom.png) repeat-x center bottom; margin: 0 30px; height: 23px;" class="shadow_img"></div>
 </div>
 ';
 		} elseif ($type == 'osx_small') {
 			$width += 12;
 			$pre_image = '<div style="width:'.$width.'px; '.$style.'" class="'.$align.'">
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left top; width: 30px; height: 2px; float: left;" class="shadow_img"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right top; width: 30px; height: 2px; float: right;" class="shadow_img"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_top.png) repeat-x center top; margin: 0 30px; height: 2px;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx_small.png) no-repeat left top; width: 30px; height: 2px; float: left;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx_small.png) no-repeat right top; width: 30px; height: 2px; float: right;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx_small_top.png) repeat-x center top; margin: 0 30px; height: 2px;" class="shadow_img"></div>
 <table style="margin:0;padding:0;width:100%;empty-cells:show;border-collapse:collapse;"><tr>
-<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left -2px; width: 6px; height: 25px;" class="shadow_img"></td>
+<td style="margin:0;padding:0;border-width:0;background: transparent url('.$plugin_url.'/shadow_osx_small.png) no-repeat left -2px; width: 6px; height: 25px;" class="shadow_img"></td>
 <td rowspan=2 style="margin:0;padding:0;border-width:0; background-color: transparent; line-height:1px;">
 ';
 			$post_image = '
 </td>
-<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right -2px; width: 6px; height: 25px;" class="shadow_img"></td>
+<td style="margin:0;padding:0;border-width:0;background: transparent url('.$plugin_url.'/shadow_osx_small.png) no-repeat right -2px; width: 6px; height: 25px;" class="shadow_img"></td>
 </tr>
 <tr>
-<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_left.png) repeat-y left center; width: 6px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
-<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_right.png) repeat-y right center; width: 6px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
+<td style="background: transparent url('.$plugin_url.'/shadow_osx_small_left.png) repeat-y left center; width: 6px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
+<td style="background: transparent url('.$plugin_url.'/shadow_osx_small_right.png) repeat-y right center; width: 6px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
 </tr>
 </table>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left bottom; width: 30px; height: 10px; float: left;" class="shadow_img"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right bottom; width: 30px; height: 10px; float: right;" class="shadow_img"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_bottom.png) repeat-x center bottom; margin: 0 30px; height: 10px;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx_small.png) no-repeat left bottom; width: 30px; height: 10px; float: left;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx_small.png) no-repeat right bottom; width: 30px; height: 10px; float: right;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx_small_bottom.png) repeat-x center bottom; margin: 0 30px; height: 10px;" class="shadow_img"></div>
 </div>
 ';		}
 
 		### Add the styles required to the image
 		if (($type == 'curl') || ($type == 'flat')) {
-			$image_style = 'padding:0 !important; margin-bottom:0 !important; margin-left:0 !important; margin-right:0 !important; max-width:100% !important;';
+			$image_style = 'padding:0 !important; margin:0 !important; max-width:100% !important;';
 		} elseif (($type == 'osx') || ($type == 'osx_small')) {
-			$image_style = 'padding:0 !important; margin-bottom:0 !important; margin-left:0 !important; margin-right:0 !important; max-width:100% !important; min-height: 25px !important;';
+			$image_style = 'padding:0 !important; margin:0 !important; vertical-align:text-bottom !important; min-height: 25px !important;';
 		}
 		if (strpos($image, "style=") == true) {
 			$image_replace = preg_replace ('/style="[^"]*/', "\\0; $image_style", $image_replace);
@@ -196,51 +196,51 @@ function shadow_curls($content) {
 
 		if (($type == 'curl') || ($type == 'flat')) {
 			$pre_div = '<div style="'.$width.'; '.$style.'" class="'.$align.'">';
-			$post_div = '<img src="'.$plugin_url.'/shadow_'.$type.'.png" class="aligncenter shadow_img" style="margin-top:0 !important;height:'.$height.';width:100%;'.$opacity.'"></div>';
+			$post_div = '<img src="'.$plugin_url.'/shadow_'.$type.'.png" class="aligncenter shadow_img" style="margin:0 !important;height:'.$height.';width:100%;'.$opacity.'"></div>';
 		} elseif ($type == 'osx') {
 			$pre_div = '<div style="'.$width.'; '.$style.'" class="'.$align.'">
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left top; width: 30px; height: 7px; float: left;" class="shadow_img"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right top; width: 30px; height: 7px; float: right;" class="shadow_img"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_top.png) repeat-x center top; margin: 0 30px; height: 7px;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx.png) no-repeat left top; width: 30px; height: 7px; float: left;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx.png) no-repeat right top; width: 30px; height: 7px; float: right;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx_top.png) repeat-x center top; margin: 0 30px; height: 7px;" class="shadow_img"></div>
 <table style="margin:0;padding:0;width:100%;empty-cells:show;border-collapse:collapse;"><tr>
-<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left -7px; width: 15px; height: 25px;" class="shadow_img"></td>
+<td style="margin:0;padding:0;border-width:0;background: transparent url('.$plugin_url.'/shadow_osx.png) no-repeat left -7px; width: 15px; height: 25px;" class="shadow_img"></td>
 <td rowspan=2 style="margin:0;padding:0;border-width:0; background-color: transparent;">
 ';
 			$post_div = '
 </td>
-<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right -7px; width: 15px; height: 25px;" class="shadow_img"></td>
+<td style="margin:0;padding:0;border-width:0;background: transparent url('.$plugin_url.'/shadow_osx.png) no-repeat right -7px; width: 15px; height: 25px;" class="shadow_img"></td>
 </tr>
 <tr>
-<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_left.png) repeat-y left center; width: 15px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
-<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_right.png) repeat-y right center; width: 15px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
+<td style="background: transparent url('.$plugin_url.'/shadow_osx_left.png) repeat-y left center; width: 15px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
+<td style="background: transparent url('.$plugin_url.'/shadow_osx_right.png) repeat-y right center; width: 15px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
 </tr>
 </table>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat left bottom; width: 30px; height: 23px; float: left;" class="shadow_img"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx.png) no-repeat right bottom; width: 30px; height: 23px; float: right;" class="shadow_img"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_bottom.png) repeat-x center bottom; margin: 0 30px; height: 23px;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx.png) no-repeat left bottom; width: 30px; height: 23px; float: left;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx.png) no-repeat right bottom; width: 30px; height: 23px; float: right;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx_bottom.png) repeat-x center bottom; margin: 0 30px; height: 23px;" class="shadow_img"></div>
 </div>
 ';
 		} elseif ($type == 'osx_small') {
 			$pre_div = '<div style="'.$width.'; '.$style.'" class="'.$align.'">
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left top; width: 30px; height: 2px; float: left;" class="shadow_img"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right top; width: 30px; height: 2px; float: right;" class="shadow_img"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_top.png) repeat-x center top; margin: 0 30px; height: 2px;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx_small.png) no-repeat left top; width: 30px; height: 2px; float: left;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx_small.png) no-repeat right top; width: 30px; height: 2px; float: right;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx_small_top.png) repeat-x center top; margin: 0 30px; height: 2px;" class="shadow_img"></div>
 <table style="margin:0;padding:0;width:100%;empty-cells:show;border-collapse:collapse;"><tr>
-<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left -2px; width: 6px; height: 25px;" class="shadow_img"></td>
+<td style="margin:0;padding:0;border-width:0;background: transparent url('.$plugin_url.'/shadow_osx_small.png) no-repeat left -2px; width: 6px; height: 25px;" class="shadow_img"></td>
 <td rowspan=2 style="margin:0;padding:0;border-width:0; background-color: transparent;">
 ';
 			$post_div = '
 </td>
-<td style="margin:0;padding:0;border-width:0;background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right -2px; width: 6px; height: 25px;" class="shadow_img"></td>
+<td style="margin:0;padding:0;border-width:0;background: transparent url('.$plugin_url.'/shadow_osx_small.png) no-repeat right -2px; width: 6px; height: 25px;" class="shadow_img"></td>
 </tr>
 <tr>
-<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_left.png) repeat-y left center; width: 6px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
-<td style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_right.png) repeat-y right center; width: 6px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
+<td style="background: transparent url('.$plugin_url.'/shadow_osx_small_left.png) repeat-y left center; width: 6px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
+<td style="background: transparent url('.$plugin_url.'/shadow_osx_small_right.png) repeat-y right center; width: 6px;margin:0;padding:0;border-width:0;" class="shadow_img"></td>
 </tr>
 </table>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat left bottom; width: 30px; height: 10px; float: left;" class="shadow_img"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small.png) no-repeat right bottom; width: 30px; height: 10px; float: right;" class="shadow_img"></div>
-<div style="background: transparent url(/wp-content/plugins/shadows/shadow_osx_small_bottom.png) repeat-x center bottom; margin: 0 30px; height: 10px;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx_small.png) no-repeat left bottom; width: 30px; height: 10px; float: left;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx_small.png) no-repeat right bottom; width: 30px; height: 10px; float: right;" class="shadow_img"></div>
+<div style="background: transparent url('.$plugin_url.'/shadow_osx_small_bottom.png) repeat-x center bottom; margin: 0 30px; height: 10px;" class="shadow_img"></div>
 </div>
 ';
 		}
