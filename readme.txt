@@ -4,7 +4,7 @@ Donate link: http://deepport.net
 Tags: shadow
 Requires at least: 2.5
 Tested up to: 2.8
-Stable Tag: 0.3.2
+Stable Tag: 0.3.3
 
 This is a plugin to add a range of shadow types to a range of objects. Currently supported are images, divs and blockquotes.
 
@@ -77,6 +77,9 @@ Other than that the appearance will be the same across all supported browsers.
 1. Screenshot taken with Firefox 3.5. This shows the two OS X window style shadows `shadow_osx` and `shadow_osx_small`
 
 == Changelog ==
+
+= 0.3.3 =
+* Added support to include the border widths in the calculation for the OS X style shadows
 
 = 0.3.2 =
 * Addressed a bug causing images to sometimes not display in IE with OS X style shadows
