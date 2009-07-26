@@ -3,7 +3,7 @@
 Plugin Name: Shadows
 Plugin URI: http://deepport.net/computing/wordpress-shadows-plugin/
 Description: Adds a range of shadow types to images, divs and blockquotes
-Version: 0.3.2
+Version: 0.3.3
 Author: Andrew Radke
 Author URI: http://deepport.net/
 */
@@ -81,6 +81,29 @@ function shadow_curls($content) {
 		if ($style == $image) {
 			$style = '';
 		} else {
+			$borderwidthleft = 0;
+			$borderwidthright = 0;
+			preg_match_all ( '/border[^;"]*/ims',$style, $borders );
+			foreach ( $borders[0] as $border) {
+				$borderwidth = preg_replace ('/border-(top|bottom)/i', '\\1', $border);
+				if ($borderwidth != $border) continue;
+
+				$borderwidth = preg_replace ('/border-left[^\d]*(\d*)px.*/i', '\\1', $border);
+				if ($borderwidth != $border) {
+					$borderwidthleft = $borderwidth;
+					continue;
+				}
+				$borderwidth = preg_replace ('/border-right[^\d]*(\d*)px.*/i', '\\1', $border);
+				if ($borderwidth != $border) {
+					$borderwidthright = $borderwidth;
+					continue;
+				}
+				$borderwidth = preg_replace ('/[^\d]*(\d*)px.*/i', '\\1', $border);
+				$borderwidthleft = $borderwidth;
+				$borderwidthright = $borderwidth;
+			}
+			$width = $width + $borderwidthleft + $borderwidthright;
+
 			preg_match_all ( '/margin[^;"]*/ims',$style, $margins );
 			$style = '';
 			foreach ( $margins[0] as $margin) {
