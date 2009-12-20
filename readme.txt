@@ -3,7 +3,7 @@ Contributors: aradke
 Donate link: http://deepport.net
 Tags: shadow
 Requires at least: 2.5
-Tested up to: 2.8
+Tested up to: 2.9
 Stable Tag: 0.3.3
 
 This is a plugin to add a range of shadow types to a range of objects. Currently supported are images, divs and blockquotes.
