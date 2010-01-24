@@ -3,7 +3,7 @@
 Plugin Name: Shadows
 Plugin URI: http://deepport.net/computing/wordpress-shadows-plugin/
 Description: Adds a range of shadow types to images, divs and blockquotes
-Version: 0.3.2
+Version: 0.3.4
 Author: Andrew Radke
 Author URI: http://deepport.net/
 */
@@ -81,6 +81,29 @@ function shadow_curls($content) {
 		if ($style == $image) {
 			$style = '';
 		} else {
+			$borderwidthleft = 0;
+			$borderwidthright = 0;
+			preg_match_all ( '/border[^;"]*/ims',$style, $borders );
+			foreach ( $borders[0] as $border) {
+				$borderwidth = preg_replace ('/border-(top|bottom)/i', '\\1', $border);
+				if ($borderwidth != $border) continue;
+
+				$borderwidth = preg_replace ('/border-left[^\d]*(\d*)px.*/i', '\\1', $border);
+				if ($borderwidth != $border) {
+					$borderwidthleft = $borderwidth;
+					continue;
+				}
+				$borderwidth = preg_replace ('/border-right[^\d]*(\d*)px.*/i', '\\1', $border);
+				if ($borderwidth != $border) {
+					$borderwidthright = $borderwidth;
+					continue;
+				}
+				$borderwidth = preg_replace ('/[^\d]*(\d*)px.*/i', '\\1', $border);
+				$borderwidthleft = $borderwidth;
+				$borderwidthright = $borderwidth;
+			}
+			$width = $width + $borderwidthleft + $borderwidthright;
+
 			preg_match_all ( '/margin[^;"]*/ims',$style, $margins );
 			$style = '';
 			foreach ( $margins[0] as $margin) {
@@ -90,11 +113,11 @@ function shadow_curls($content) {
 		}
 		
 		if (($type == 'curl') || ($type == 'flat')) {
-			$pre_image = '<div style="display:table;line-height:0;text-align:center;width:'.$width.'px;'.$style.'" class="'.$align.'">';
+			$pre_image = '<div style="overflow:hidden;display:table;line-height:0;text-align:center;width:'.$width.'px;'.$style.'" class="'.$align.'">';
 			$post_image = '<br/><img src="'.$plugin_url.'/shadow_'.$type.'.png" class="shadow_img" style="margin:0 !important;height:'.$height.';width:100%;'.$opacity.'"></div>';
 		} elseif ($type == 'osx') {
 			$width += 30;
-			$pre_image = '<div style="width:'.$width.'px; '.$style.'" class="'.$align.'">
+			$pre_image = '<div style="overflow:hidden;width:'.$width.'px; '.$style.'" class="'.$align.'">
 <div style="background: transparent url('.$plugin_url.'/shadow_osx.png) no-repeat left top; width: 30px; height: 7px; float: left;" class="shadow_img"></div>
 <div style="background: transparent url('.$plugin_url.'/shadow_osx.png) no-repeat right top; width: 30px; height: 7px; float: right;" class="shadow_img"></div>
 <div style="background: transparent url('.$plugin_url.'/shadow_osx_top.png) repeat-x center top; margin: 0 30px; height: 7px;" class="shadow_img"></div>
@@ -118,7 +141,7 @@ function shadow_curls($content) {
 ';
 		} elseif ($type == 'osx_small') {
 			$width += 12;
-			$pre_image = '<div style="width:'.$width.'px; '.$style.'" class="'.$align.'">
+			$pre_image = '<div style="overflow:hidden;width:'.$width.'px; '.$style.'" class="'.$align.'">
 <div style="background: transparent url('.$plugin_url.'/shadow_osx_small.png) no-repeat left top; width: 30px; height: 2px; float: left;" class="shadow_img"></div>
 <div style="background: transparent url('.$plugin_url.'/shadow_osx_small.png) no-repeat right top; width: 30px; height: 2px; float: right;" class="shadow_img"></div>
 <div style="background: transparent url('.$plugin_url.'/shadow_osx_small_top.png) repeat-x center top; margin: 0 30px; height: 2px;" class="shadow_img"></div>
@@ -195,10 +218,10 @@ function shadow_curls($content) {
 		}
 
 		if (($type == 'curl') || ($type == 'flat')) {
-			$pre_div = '<div style="'.$width.'; '.$style.'" class="'.$align.'">';
+			$pre_div = '<div style="overflow:hidden;'.$width.'; '.$style.'" class="'.$align.'">';
 			$post_div = '<img src="'.$plugin_url.'/shadow_'.$type.'.png" class="aligncenter shadow_img" style="margin:0 !important;height:'.$height.';width:100%;'.$opacity.'"></div>';
 		} elseif ($type == 'osx') {
-			$pre_div = '<div style="'.$width.'; '.$style.'" class="'.$align.'">
+			$pre_div = '<div style="overflow:hidden;'.$width.'; '.$style.'" class="'.$align.'">
 <div style="background: transparent url('.$plugin_url.'/shadow_osx.png) no-repeat left top; width: 30px; height: 7px; float: left;" class="shadow_img"></div>
 <div style="background: transparent url('.$plugin_url.'/shadow_osx.png) no-repeat right top; width: 30px; height: 7px; float: right;" class="shadow_img"></div>
 <div style="background: transparent url('.$plugin_url.'/shadow_osx_top.png) repeat-x center top; margin: 0 30px; height: 7px;" class="shadow_img"></div>
@@ -221,7 +244,7 @@ function shadow_curls($content) {
 </div>
 ';
 		} elseif ($type == 'osx_small') {
-			$pre_div = '<div style="'.$width.'; '.$style.'" class="'.$align.'">
+			$pre_div = '<div style="overflow:hidden;'.$width.'; '.$style.'" class="'.$align.'">
 <div style="background: transparent url('.$plugin_url.'/shadow_osx_small.png) no-repeat left top; width: 30px; height: 2px; float: left;" class="shadow_img"></div>
 <div style="background: transparent url('.$plugin_url.'/shadow_osx_small.png) no-repeat right top; width: 30px; height: 2px; float: right;" class="shadow_img"></div>
 <div style="background: transparent url('.$plugin_url.'/shadow_osx_small_top.png) repeat-x center top; margin: 0 30px; height: 2px;" class="shadow_img"></div>
